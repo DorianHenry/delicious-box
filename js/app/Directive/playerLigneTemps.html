@@ -1,0 +1,21 @@
+
+    <div class="tempo">
+        <label style="color:#fff;">Tempo(BPM)</label><input type="text" ng-model="bpm"/>
+    </div>
+<div id="batterie" class="clearfix" ng-if="ligneTemps.batterie">
+        <div class="instrumentName inIndex" style="float: left;">
+            <p ng-repeat="instrument in instruments.batterie.elements">{{instrument.key}}</p>
+        </div>
+        <div class="time-line-batterie">
+            <div ng-repeat="temps in ligneTemps.batterie" class="timeCheckBox">
+                <div ng-repeat="element in temps"><label class="custom-checkbox"><input type="checkbox" value="true" ng-model="element.isActive" checked><span class="check-style"></span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="demo1" data-url="http://sharrre.com" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share"></div>
+    <div class="pull-right">
+        <button ng-click="save()" class="btn btn-primary">Enregistrer</button>
+        <button ng-click="play()" class="btn btn-success"><i class="fa fa-play"></i></button>
+        <button ng-click='stop()' class="btn btn-danger"><i class="fa fa-stop"></i></button>
+    </div>

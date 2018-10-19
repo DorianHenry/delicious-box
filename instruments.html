@@ -1,0 +1,64 @@
+   
+<div class="modal-body clearfix">
+<!--        <div ng-repeat="time in timeLine">
+            {{ $index + 1 }}
+                
+            <div ng-repeat="note in time">
+                    <input type="text" ng-model="note.pitch"/>
+                    <input type="number" ng-model="note.duration"/>
+            </div>
+            
+            <div>
+                <input type="text" ng-model="newTimeLine[$index].pitch" placeholder="pitch"/>
+                <input type="number" ng-model="newTimeLine[$index].duration" placeholder="duration"/>
+                <button ng-click="add($index)">add</button>
+            </div>
+            
+        </div>-->
+        
+    
+        <div class="clearfix">
+        <div ng-repeat="time in timeLine" class="dropable">
+            <!--{{ $index + 1 }}-->
+
+            <div data-drop="true" ng-model="time" jqyoui-droppable="{multiple:true}">
+                <div ng-repeat="item in time track by $index" class="dropdown" dropdown on-toggle="toggled(open)">
+                    <div class="btn btn-success dropdown-toggle" dropdown-toggle>{{item.pitch}} ({{item.tempsIni}})</div>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="temps in currentElement.nbreTemps"><a href="#" ng-click="item.tempsIni = temps">{{temps}} temps</a></li>
+                    </ul>
+                    <a ng-click="delete($parent.$index, $index)">X</a>
+                </div>
+                
+                
+                <div class="thumbnail" ng-hide="time.length > 0">Ajoutez une note ici</div>
+            </div>
+            
+        </div>
+        </div>
+    <div class="clearfix note-picth-dropable">
+    <div ng-repeat="mynote in currentElement.elements track by $index">
+        <div 
+            class="btn btn-primary pull-left notes" 
+            data-drag="true" 
+            data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" 
+            ng-model="currentElement.elements" 
+            jqyoui-draggable="{index: {{$index}}, placeholder: 'keep', deepCopy : true}"
+            ng-class="{'active' : playedNote === mynote.pitch}"
+            >
+            {{mynote.pitch}} ({{mynote.key}})
+        </div>
+    </div>
+    </div>
+    
+<!--    <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
+        <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">
+            {{list2.title}}
+        </div>
+    </div>-->
+    <div class="pull-right">
+        <button ng-click="ok()" class="btn btn-success">Enregistrer</button>
+        <button ng-click="cancel()" class="btn btn-danger">Annuler</button>
+    </div>
+</div>
+

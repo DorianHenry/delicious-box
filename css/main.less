@@ -1,0 +1,390 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+//master 
+
+h1,h2,h3,h4,h5,h6,a,p
+{
+    font-family: 'Lato', sans-serif;
+}
+
+body 
+{
+/*    background: url(../img/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+    
+    background-color: #2e3039;
+    width: 100%;
+    height: 100%;
+}
+
+#container 
+{
+    width: 1170px;
+    margin:auto;
+}
+
+//menu header
+#header
+{
+   margin-top: 30px; 
+   
+   .menuUtilisateur 
+   {
+       float:right;
+       
+       ul 
+       {
+           text-align: right;
+        li 
+        {
+            list-style: none;
+            padding-bottom: 10px;
+
+             a 
+             {
+                 color:#fff;
+                 font-size:1.3em;
+             }
+
+            .fa 
+            {
+                padding-right: 10px;
+            }
+        }
+        
+       }
+   }
+}
+
+.time-line-batterie
+{
+    width:90%;
+    float:left;
+}
+
+.instrumentName
+{
+    width:10%;
+    float:left;
+}
+
+.inIndex{
+    color:#fff;
+}
+
+
+
+//instruments 
+
+#instruments
+{
+    margin-top: 50px;
+}
+
+#composition
+{
+    margin-top: 50px;
+}
+
+#batterie 
+{
+    margin:30px 0;
+}
+
+.add-true{
+    color:green;
+    text-transform: uppercase;
+}
+.sample-show-hide
+{
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
+.ng-hide
+{
+    opacity:0;
+}
+
+.timeCheckBox
+{
+    float:left;
+    width:94%/16;
+    text-align: center;
+    
+    &:nth-child(4)
+        {
+             margin-right:2%;
+        }
+    &:nth-child(8)
+        {
+            margin-right:2%;
+        }
+    &:nth-child(12)
+        {
+            margin-right:2%;
+        }
+}
+
+
+
+
+.instrument-partie-nom
+{
+    color:#fff;
+}
+
+.note-picth-dropable
+{
+    .active 
+    {
+        background-color:#286090;
+    }
+}
+
+.dropable
+{
+    width:94%/16;
+    float:left;
+    
+    &:nth-child(4)
+        {
+            margin-right:2%;
+        }
+    &:nth-child(8)
+        {
+            margin-right:2%;
+        }
+     &:nth-child(12)
+        {
+            margin-right:2%;
+        }
+    
+    .thumbnail
+    {
+        height:auto;
+    }
+}
+
+.notes
+{
+    width:74%/13;
+    
+    margin:1%;
+}
+
+.check-style
+
+    {
+
+        position: relative;
+
+        display: inline-block;
+
+        width: 24px;
+
+        height: 21px;
+
+        background:url('../img/check.svg');
+        
+        background-repeat: no-repeat;
+
+ 
+
+        &:before
+
+        {
+
+            display: none;
+
+            transition: all 0.2;
+
+        }
+
+    }
+
+ 
+
+    td .check-style
+
+    {
+
+        margin-right: 0;
+
+    }
+
+ 
+
+    .custom-checkbox input[type=checkbox]
+
+    {
+
+        display: none;
+
+    }
+
+ 
+
+    input[type=checkbox]:checked ~  input ~ .check-style:before,
+
+    input[type=checkbox]:checked ~ .check-style:before
+
+    {
+
+        content:'';
+        
+        background: url('../img/check-check.svg');
+        
+        background-repeat: no-repeat;
+
+        position: absolute;
+
+        display: block;
+
+        width: 23px;
+        
+        height: 20px;
+
+        top: 0;
+
+        left: 0;
+
+        line-height: 18px;
+
+        text-align: center;
+
+    }
+
+ 
+
+    .custom-checkbox
+
+    {
+
+        cursor: pointer;
+
+    }
+
+ 
+
+    .custom-checkbox label
+
+    {
+
+        display: inline;
+
+    }
+    
+    canvas
+    {
+        position: absolute;
+        top:0;
+        left:0;
+    }
+
+//Animation au chargement de la page
+
+
+/*#loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading #loader {
+    display: block;
+}*/
+
+
+
+
+
+
+
+
+//*Custom Sharrrreee*//
+.sharrre .box{
+  float:left;
+}
+.sharrre .count {
+  color:#444444;
+  display:block;
+  font-size:17px;
+  line-height:34px;
+  height:34px;
+  padding:4px 0;
+  position:relative;
+  text-align:center;
+  text-decoration:none;
+  width:50px;
+  background-color:#eee;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px; 
+}
+.sharrre .share {
+  color:#FFFFFF;
+  display:block;
+  font-size:11px;
+  height:16px;
+  line-height:16px;
+  margin-top:3px;
+  padding:0;
+  text-align:center;
+  text-decoration:none;
+  width:50px;
+  background-color:#9CCE39;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px; 
+}
+.sharrre .buttons {
+  display:none;
+  position:absolute;
+  margin-left:50px;
+  z-index:10;
+  background-color:#fff;
+}
+.sharrre .button {
+  float:left;
+  max-width:50px;
+  margin-left:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

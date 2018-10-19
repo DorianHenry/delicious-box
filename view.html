@@ -1,0 +1,84 @@
+<!doctype html>
+<html ng-app="moduleDeliciousBox">
+  <head>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>-->
+    
+    <!--sounds-->
+    <script src="js/vendor/wad-min.js"></script>
+    <script src="js/app/sounds.js"></script>
+    
+    <!--Json-->
+    <script src="js/app/JasonFile/json.js"></script>
+    
+    <!--Jquery-->
+    <script src="js/vendor/JQueryUi/jquery-1.11.1.min.js"></script>
+    <script src="js/vendor/JQueryUi/jquery-ui.min.js"></script>
+    
+    <script src="js/vendor/signals.min.js"></script>
+    
+    <!--Angular-->
+    <script src="js/vendor/angular.min.js"></script>
+    <!--<script src="js/vendor/angular-strap/angular-strap.js"></script>-->
+    <script src="js/vendor/ui-bootstrap.js"></script>
+    <script src="js/vendor/ui-bootstrap.js"></script>
+    <script src="js/vendor/angular-drag-drop.js"></script>
+    
+    
+    <script src="js/app/app.js"></script>
+    <script src="js/app/Controller/SoundsController.js"></script>
+    <script src="js/app/Controller/modalBatterie.js"></script>
+    <script src="js/app/Controller/modalInstruments.js"></script>
+    <script src="js/app/Directive/PlayerLigneTemps.js"></script>
+    <script src="js/app/Service/timeLine.js"></script>
+    
+    <!--Styles-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/main.less">
+    <script src="js/vendor/less.js" type="text/javascript"></script>
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+  </head>
+  <body>
+      <div id="particles-js">
+       <script src="js/vendor/particles.min.js"></script>
+       <script src="js/main.js"></script>   
+      <div id="container" ng-controller="SoundsController">
+          
+          <section id="header" class="row">
+            <div class="col-md-2 col-md-offset-5">
+                <svg id="svgLogo"/>
+            </div>
+            </section>
+          
+          <section id="instruments" class="row">
+                   
+                    <div ng-repeat="instrument in instruments" class="col-md-2">
+                        <a href="#" ng-click="open(instrument)">
+                        <svg id="svg{{instrument.text}}" ></svg>
+                        </a>
+                    </div>
+                  
+           </section>
+          
+          <section id="composition">
+              <div class="row">
+                <div player-ligne-temps="timeLines" class="clearfix col-md-12"></div>
+               
+              </div>
+          </section>
+    
+       </div>
+    
+    </div>
+      
+      
+     
+    
+    <!--Snap Svg-->
+    <script src="js/snapSvg/snap.svg-min.js"></script>
+    <script src="js/snapSvg/snapCustom.js"></script>
+      
+  </body>
+</html>
+

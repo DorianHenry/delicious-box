@@ -1,0 +1,21 @@
+   
+<div class="modal-body clearfix">
+    <div class="instrumentName" style="float: left;">
+    <p ng-repeat="instrument in instruments.batterie.elements">{{instrument.key}}</p>
+    </div>
+    <div class="time-line-batterie">
+        <div ng-repeat="time in timeLine" class="timeCheckBox">
+            <!--{{ $index + 1 }}-->
+            <div ng-repeat="element in time"><label class="custom-checkbox"><input type="checkbox" value="true" ng-model="element.isActive" class="element"><span class="check-style"></span></label> </div>
+            
+        </div>
+    </div>
+    
+    <div class="pull-right" style="margin-top:30px;">
+        <button class="btn btn-success" ng-click="ok()">Enregistrer</button>
+        <button class="btn btn-danger" ng-click="cancel()">Annuler</button>
+    </div>
+</div>
+
+
+    
